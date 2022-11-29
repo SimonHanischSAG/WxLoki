@@ -6,4 +6,4 @@ wx.config.env.PROD=../../../config/packages/WxLoki/wxconfig-PROD.cnf
 
 
 # For debugging purpose
-loki.logging.tracingEnabled=true
+loki.logging.tracingEnabled=false

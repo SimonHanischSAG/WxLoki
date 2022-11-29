@@ -7,4 +7,8 @@
     <value>java.net.InetAddress</value>
     <value>java.util.Locale</value>
   </array>
+  <value name="shared"></value>
+  <value name="extends"></value>
+  <array name="implements" type="value" depth="1">
+  </array>
 </Values>

@@ -69,7 +69,8 @@ public final class util
 		// @sigtype java 3.5
 		// [o] field:0:required time
 		IDataMap pipelineMap = new IDataMap(pipeline);
-		pipelineMap.put("time", String.format(Locale.US, "%.3f", Double.valueOf(System.currentTimeMillis()/ 1000.0)));
+		pipelineMap.put("time", String.valueOf(System.currentTimeMillis()*1000000));
+			
 			
 		// --- <<IS-END>> ---
 

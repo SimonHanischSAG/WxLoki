@@ -165,7 +165,7 @@
 
   <!-- nodes -->
 
-<MAPINVOKE SERVICE="wx.log.impl.loki:getLokiTime" VALIDATE-IN="$none" VALIDATE-OUT="$none" INVOKE-ORDER="0">
+<MAPINVOKE SERVICE="wx.loki.util:getLokiTime" VALIDATE-IN="$none" VALIDATE-OUT="$none" INVOKE-ORDER="0">
 
   <!-- nodes -->
 
