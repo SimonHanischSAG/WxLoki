@@ -33,7 +33,7 @@ Reload WxLoki
 
 <h3>Configure Environment</h3>
 
-You have to configure WxLoki in ../../../config/packages/WxLoki/wxconfig-<environment>.cnf (example when you are using the simulation in WxLoki_Test. 
+You have to configure WxLoki in ../../../config/packages/WxLoki/wxconfig-&lt;env&gt;.cnf (example when you are using the simulation in WxLoki_Test. 
 In that case you have to adjust the permissions of wx.loki.ws:_post e.g. to Anonymous):
 
 loki.logging.url=http://localhost:5555/rest/wx.loki.ws
@@ -57,7 +57,7 @@ Furthermore you can invoke wx.loki.test:testContinuousLokiLogger in order to tes
 
 <h3>Advanded Configuration</h3>
 
-Compare with ../../../config/packages/WxLoki/wxconfig-<environment>.cnf:
+Compare with ../../../config/packages/WxLoki/wxconfig-&lt;env&gt;.cnf.cnf:
 
 <pre><code>
 # Count of retries for sending messages to Loki -> Higher retries in case of outage of Loki will prevent from messsage lost
