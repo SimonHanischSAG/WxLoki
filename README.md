@@ -31,6 +31,8 @@ C:\SoftwareAG\IntegrationServer\instances\default\bin\jcode.bat makeall WxLoki
 
 Reload WxLoki
 
+Do the same for WxLoki_Test if you want to use the test stuff.
+
 <h3>Configure Environment</h3>
 
 You have to configure WxLoki in ../../../config/packages/WxLoki/wxconfig-&lt;env&gt;.cnf (example when you are using the simulation in WxLoki_Test. 
