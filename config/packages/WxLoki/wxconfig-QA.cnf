@@ -1,0 +1,16 @@
+loki.logging.url=http://localhost:5555/rest/wx.loki.ws
+loki.logging.user=tester
+loki.logging.pass=manage
+# Use that key to enable or disable the logging directly during runtime:
+loki.logging.enabled=true
+
+# Count of retries for sending messages to Loki
+loki.logging.maxDeliveryAttempts=100
+# Count of messages which can be stored in the internal queue and waiting for sending
+loki.logging.maxMessagesInQueue=100000
+
+# How many events shall be written to Loki in one call
+loki.logging.batchSize=2000
+# How often should wx.loki.impl:continuousLokiLoggerThread become active:
+loki.logging.minSleepingTimeAfterBatchInMilliseconds=100
+loki.logging.maxSleepingTimeAfterBatchInMilliseconds=500

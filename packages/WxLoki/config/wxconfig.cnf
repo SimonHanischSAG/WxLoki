@@ -1,0 +1,9 @@
+wx.config.env.LOCAL-DEV=../../../config/packages/WxLoki/wxconfig-LOCAL-DEV.cnf
+wx.config.env.DEV=../../../config/packages/WxLoki/wxconfig-DEV.cnf
+wx.config.env.TEST=../../../config/packages/WxLoki/wxconfig-TEST.cnf
+wx.config.env.QS=../../../config/packages/WxLoki/wxconfig-QS.cnf
+wx.config.env.PROD=../../../config/packages/WxLoki/wxconfig-PROD.cnf
+
+
+# For debugging purpose
+loki.logging.tracingEnabled=true
