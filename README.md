@@ -59,6 +59,7 @@ Furthermore you can invoke wx.loki.test:testContinuousLokiLogger in order to tes
 
 Compare with ../../../config/packages/WxLoki/wxconfig-<environment>.cnf:
 
+<pre><code>
 # Count of retries for sending messages to Loki -> Higher retries in case of outage of Loki will prevent from messsage lost
 loki.logging.maxDeliveryAttempts=100
 # Count of messages which can be stored in the internal queue and waiting for sending -> Avoid to store too many messages in memory in order to break your server.
@@ -69,6 +70,7 @@ loki.logging.batchSize=2000
 # How often should wx.loki.impl:continuousLokiLoggerThread become active: -> After each call the will sleep a dynamic period of time between the following values. You can reduce CPU usage of this thread by increasing minSleepingTimeAfterBatchInMilliseconds
 loki.logging.minSleepingTimeAfterBatchInMilliseconds=100
 loki.logging.maxSleepingTimeAfterBatchInMilliseconds=500
+</code></pre>
 
 <h3>Best practices</h3>
 
