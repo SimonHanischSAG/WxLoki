@@ -59,14 +59,10 @@ public final class impl
 		String maxSleepingTimeAfterBatchInMillisecondsString = pipeMap.getAsString("maxSleepingTimeAfterBatchInMilliseconds");
 		
 		if (url == null || url.equals("")){
+			debugLogInfo("continuousLokiLoggerThread aborted: url is null");
 			throw new ServiceException("url is null");
 		}
-		if (user == null || user.equals("")){
-			throw new ServiceException("user is null");
-		}
-		if (pass == null || pass.equals("")){
-			throw new ServiceException("pass is null");
-		}
+		
 		int batchSize = 500;
 		if (batchSizeString != null && !batchSizeString.equals("")) {
 			batchSize = Integer.valueOf(batchSizeString);
@@ -89,8 +85,12 @@ public final class impl
 			IData httpInput = IDataFactory.create();
 			IDataMap httpInputMap = new IDataMap(httpInput);
 			httpInputMap.put("url", url);
-			httpInputMap.put("user", user);
-			httpInputMap.put("pass", pass);
+			if (user != null) {
+				httpInputMap.put("user", user);
+			}
+			if (pass != null) {
+				httpInputMap.put("pass", pass);
+			}
 			NSName ns = NSName.create(SERVICE_SEND_EVENT);
 			
 			while (stopContinuousLokiLoggerThread == false) {
@@ -164,6 +164,7 @@ public final class impl
 			}
 		}
 		debugLogInfo("continuousLokiLoggerThread: Thread stopped now");
+			
 			
 			
 			
@@ -434,6 +435,7 @@ public final class impl
 			}
 		}
 	}
+		
 		
 		
 		

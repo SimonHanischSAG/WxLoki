@@ -1,5 +1,5 @@
 loki.logging.url=http://localhost:5555/rest/wx.loki.ws
-loki.logging.user=tester
+loki.logging.user=Administrator
 loki.logging.pass=manage
 # Use that key to enable or disable the logging directly during runtime:
 loki.logging.enabled=true
