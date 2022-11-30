@@ -10,8 +10,6 @@ If you use that you have to define regular expressions if you want to extract la
 
 It is designed for usage together with the official packages WxConfig (or the free alternative https://github.com/SimonHanischSAG/WxConfigLight) and optionally in parallel with the official packages WxLog or WxLog2.
 
-MANY THANKS TO LIDL AND SCHWARZ IT, who kindly allowed to provide the template for this package and make it public.
-
 <h2>How to use</h2>
 
 <h3>Deploy/checkout WxLoki</h3>
