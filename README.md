@@ -36,9 +36,12 @@ Do the same for WxLoki_Test if you want to use the test stuff.
 You have to configure WxLoki in ../../../config/packages/WxLoki/wxconfig-&lt;env&gt;.cnf (example when you are using the simulation in WxLoki_Test. 
 In that case you have to adjust the permissions of wx.loki.ws:_post e.g. to Anonymous):
 
+<pre><code>
 loki.logging.url=http://localhost:5555/rest/wx.loki.ws
-loki.logging.token=Loki XXXXXXXX-XXXX-XXXX-XXXX-XXXXXXXXXXXX
+loki.logging.user=Administrator
+loki.logging.pass=manage
 loki.logging.enabled=true
+</code></pre>
 
 Reload WxLoki. The startup will start the "continuousLokiLoggerThread" with that configuration. Check the server.log for:
   
