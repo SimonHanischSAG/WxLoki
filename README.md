@@ -4,8 +4,8 @@ This package encapsulate the process of sending your log messages to Loki in an 
 For better performance it buffers the log messages in a queue in memory. A thread in background works through the queue and sending the events in batches to Loki (DO NOT KILL THIS THREAD!).
 Between the batches this "continuousLokiLoggerThread" will sleep a period of time. This time is depending on the load and the min and max which is configurable.
 
-As the data is stored in a queue in memory this technique has the disadvantage **that message lost cannot be completely excluded**. On the other hand the direct invocation from Flow allows you to set your **own labels**.
-The official alternative to this package is to use Promtail as an agent on each server (https://grafana.com/docs/loki/latest/clients/promtail/). 
+As the data is stored in a queue in memory this technique has the disadvantage **that message lost cannot be completely excluded**. On the other hand the direct invocation from Flow allows you to attach your **own labels** which can be used for building queries and dashboards.
+The official alternative to this package is to use **Promtail as an agent on each server** (https://grafana.com/docs/loki/latest/clients/promtail/). 
 If you use that you have to define regular expressions if you want to extract labels from log lines.
 
 It is designed for usage together with the official packages WxConfig (or the free alternative https://github.com/SimonHanischSAG/WxConfigLight) and optionally in parallel with the official packages WxLog or WxLog2.
@@ -60,7 +60,7 @@ Furthermore you can invoke wx.loki.test:testContinuousLokiLogger in order to tes
 
 <h3>Advanded Configuration</h3>
 
-Compare with ../../../config/packages/WxLoki/wxconfig-&lt;env&gt;.cnf.cnf:
+Compare with ../../../config/packages/WxLoki/wxconfig-&lt;env&gt;.cnf.cnf to optimize the behavior of the internal queue and thread:
 
 <pre><code>
 # Count of retries for sending messages to Loki -> Higher retries in case of outage of Loki will prevent from messsage lost
@@ -74,6 +74,10 @@ loki.logging.batchSize=2000
 loki.logging.minSleepingTimeAfterBatchInMilliseconds=100
 loki.logging.maxSleepingTimeAfterBatchInMilliseconds=500
 </code></pre>
+
+If you want to check how the thread is performing you can invoke
+wx.loki.impl:getStateOfContinuousLokiLoggerThread
+during runtime.
 
 <h3>Best practices</h3>
 
