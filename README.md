@@ -44,10 +44,12 @@ loki.logging.enabled=true
 </code></pre>
 
 Reload WxLoki. The startup will start the "continuousLokiLoggerThread" with that configuration. Check the server.log for:
-  
+
+<pre><code>
 2022-11-29 09:38:00 CEST [ISS.0028.0012I] (tid=86) WxLoki: Startup service (wx.loki.admin:startUp) 
 2022-11-29 09:38:01 CEST [ISP.0090.0004I] (tid=86) WxLoki -- startLokiLoggerThread: Started 
 2022-11-29 09:38:01 CEST [ISP.0090.0004I] (tid=86) WxLoki -- continuousLokiLoggerThread: Thread started 
+</code></pre>
 
 CONSIDER THAT ALL CONFIG VALUES ARE CACHED except loki.logging.enabled which is checked for each log statement.
 
@@ -81,4 +83,4 @@ during runtime.
 
 <h3>Best practices</h3>
 
-You should work carefully with the labels. Unfortunately they are not designed for a highly dynamic usage (both for the key and the value). Comapre with: https://grafana.com/docs/loki/latest/best-practices/
+You should work carefully with the labels. Unfortunately they are not designed for a highly dynamic usage (both for the key and the value). Otherwise you will slow down Loki and in particular the UI. Comapre with: https://grafana.com/docs/loki/latest/best-practices/
