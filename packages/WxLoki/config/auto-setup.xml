@@ -16,7 +16,7 @@
 				</jmsConnectionFactory>
 
 				<queue>
-					<name>${loki.buffer.destinationName.loki}</name>
+					<name>${loki.buffer.destinationName}</name>
 					<suppressDefaultAcls>true</suppressDefaultAcls>
 					<storageProperties>
 						<autoMaintanence>true</autoMaintanence>
@@ -31,7 +31,7 @@
     				<isConcurrent>true</isConcurrent>
     				<maxExecutionThreads>30</maxExecutionThreads>
     				<destinations>
-    					<destination>${loki.buffer.destinationName.loki}</destination>
+    					<destination>${loki.buffer.destinationName}</destination>
     					<destinationType>Queue</destinationType>
     				</destinations>
     				<routingRules>

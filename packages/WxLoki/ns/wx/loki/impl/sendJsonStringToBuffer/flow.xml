@@ -194,7 +194,7 @@
 </MAP>
 
 <MAP TIMEOUT="" MODE="STANDALONE">
-  <COMMENT>loki.buffer.destinationName.loki</COMMENT>
+  <COMMENT>loki.buffer.destinationName</COMMENT>
   <MAPTARGET>
 
 <Values version="2.0">
@@ -365,7 +365,7 @@
   <DATA ENCODING="XMLValues" I18N="true">
 
 <Values version="2.0">
-  <value name="xml">loki.buffer.destinationName.loki</value>
+  <value name="xml">loki.buffer.destinationName</value>
   <record name="type" javaclass="com.wm.util.Values">
     <value name="node_type">unknown</value>
     <value name="node_subtype">unknown</value>
@@ -589,6 +589,50 @@
                 <value name="form_qualified">false</value>
                 <value name="is_global">false</value>
                 <array name="rec_fields" type="record" depth="1">
+                  <record javaclass="com.wm.util.Values">
+                    <value name="node_type">unknown</value>
+                    <value name="node_subtype">unknown</value>
+                    <value name="is_public">false</value>
+                    <value name="field_name">jsonString</value>
+                    <value name="field_type">string</value>
+                    <value name="field_dim">0</value>
+                    <value name="nillable">true</value>
+                    <value name="form_qualified">false</value>
+                    <value name="is_global">false</value>
+                  </record>
+                  <record javaclass="com.wm.util.Values">
+                    <value name="node_type">unknown</value>
+                    <value name="node_subtype">unknown</value>
+                    <value name="is_public">false</value>
+                    <value name="field_name">user</value>
+                    <value name="field_type">string</value>
+                    <value name="field_dim">0</value>
+                    <value name="nillable">true</value>
+                    <value name="form_qualified">false</value>
+                    <value name="is_global">false</value>
+                  </record>
+                  <record javaclass="com.wm.util.Values">
+                    <value name="node_type">unknown</value>
+                    <value name="node_subtype">unknown</value>
+                    <value name="is_public">false</value>
+                    <value name="field_name">pass</value>
+                    <value name="field_type">string</value>
+                    <value name="field_dim">0</value>
+                    <value name="nillable">true</value>
+                    <value name="form_qualified">false</value>
+                    <value name="is_global">false</value>
+                  </record>
+                  <record javaclass="com.wm.util.Values">
+                    <value name="node_type">unknown</value>
+                    <value name="node_subtype">unknown</value>
+                    <value name="is_public">false</value>
+                    <value name="field_name">url</value>
+                    <value name="field_type">string</value>
+                    <value name="field_dim">0</value>
+                    <value name="nillable">true</value>
+                    <value name="form_qualified">false</value>
+                    <value name="is_global">false</value>
+                  </record>
                 </array>
                 <value name="modifiable">true</value>
               </record>
@@ -731,17 +775,6 @@
         <value name="node_type">unknown</value>
         <value name="node_subtype">unknown</value>
         <value name="is_public">false</value>
-        <value name="field_name">WxLogBuffer.connectionAliasName</value>
-        <value name="field_type">string</value>
-        <value name="field_dim">0</value>
-        <value name="nillable">true</value>
-        <value name="form_qualified">false</value>
-        <value name="is_global">false</value>
-      </record>
-      <record javaclass="com.wm.util.Values">
-        <value name="node_type">unknown</value>
-        <value name="node_subtype">unknown</value>
-        <value name="is_public">false</value>
         <value name="field_name">connectionAliasName</value>
         <value name="field_type">string</value>
         <value name="field_dim">0</value>
@@ -793,16 +826,22 @@
 </DATA>
 </MAPSET>
 
-<MAPCOPY FROM="/jsonString;1;0" TO="/JMSMessage;2;0/body;2;0/string;1;0">
-</MAPCOPY>
-
-<MAPDELETE FIELD="/WxLogBuffer.connectionAliasName;1;0">
-</MAPDELETE>
-
 <MAPCOPY FROM="/connectionAliasName;1;0" TO="/connectionAliasName;1;0">
 </MAPCOPY>
 
 <MAPCOPY FROM="/destinationName;1;0" TO="/destinationName;1;0">
+</MAPCOPY>
+
+<MAPCOPY FROM="/jsonString;1;0" TO="/JMSMessage;2;0/body;2;0/data;2;0/jsonString;1;0">
+</MAPCOPY>
+
+<MAPCOPY FROM="/user;1;0" TO="/JMSMessage;2;0/body;2;0/data;2;0/user;1;0">
+</MAPCOPY>
+
+<MAPCOPY FROM="/pass;1;0" TO="/JMSMessage;2;0/body;2;0/data;2;0/pass;1;0">
+</MAPCOPY>
+
+<MAPCOPY FROM="/url;1;0" TO="/JMSMessage;2;0/body;2;0/data;2;0/url;1;0">
 </MAPCOPY>
 </MAP>
 
