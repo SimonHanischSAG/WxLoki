@@ -23,7 +23,7 @@ mklink /J F:\\SoftwareAG\\IntegrationServer\\instances\\default\\packages\\WxLok
 
 <h4>Build & Reload</h4>
 
-If you checkout the sources from GitHub you have to compile the source, e.g. with:
+If you checkout the sources from GitHub you may have to recompile the source, e.g. with:
 
 C:\SoftwareAG\IntegrationServer\instances\default\bin\jcode.bat makeall WxLoki
 
@@ -41,6 +41,20 @@ loki.logging.url=http://localhost:5555/rest/wx.loki.ws
 loki.logging.user=Administrator
 loki.logging.pass=manage
 loki.logging.enabled=true
+</code></pre>
+
+Furthermore you have to adjust the following in order to use a JMS queues as a persistent buffer in order to avoid message lost:
+
+<pre><code>
+# Buffer log messasges
+loki.buffer.connectionAliasName=DEFAULT_IS_JMS_CONNECTION
+loki.buffer.destinationName=internal/WxLokiBufferQueue
+
+# Access to UM
+um.admin.hosts=nsp://localhost:9000
+um.admin.username=
+um.admin.password=
+um.connectionURL=nsp://localhost:9000
 </code></pre>
 
 Reload WxLoki. The startup will start the "continuousLokiLoggerThread" with that configuration. Check the server.log for:
