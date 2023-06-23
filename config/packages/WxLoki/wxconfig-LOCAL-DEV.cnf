@@ -5,12 +5,23 @@ loki.logging.pass=manage
 loki.logging.enabled=true
 
 # Count of retries for sending messages to Loki
-loki.logging.maxDeliveryAttempts=10
+loki.logging.maxDeliveryAttempts=1
 # Count of messages which can be stored in the internal queue and waiting for sending
-loki.logging.maxMessagesInQueue=10000
+loki.logging.maxMessagesInQueue=50000
 
 # How many events shall be written to Loki in one call
 loki.logging.batchSize=500
 # How often should wx.loki.impl:continuousLokiLoggerThread become active:
 loki.logging.minSleepingTimeAfterBatchInMilliseconds=500
 loki.logging.maxSleepingTimeAfterBatchInMilliseconds=2000
+
+# Buffer log messasges
+loki.buffer.connectionAliasName=DEFAULT_IS_JMS_CONNECTION
+loki.buffer.destinationName.loki=internal/WxLokiBufferQueue
+
+# Access to UM
+um.admin.hosts=nsp://localhost:9000
+um.admin.username=
+um.admin.password=
+um.connectionURL=nsp://localhost:9000
+

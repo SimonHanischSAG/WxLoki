@@ -1,7 +1,9 @@
+wx.config.autoSetup.execute=true
+wx.config.incl=auto-setup.xml
 wx.config.env.LOCAL-DEV=../../../config/packages/WxLoki/wxconfig-LOCAL-DEV.cnf
 wx.config.env.DEV=../../../config/packages/WxLoki/wxconfig-DEV.cnf
 wx.config.env.TEST=../../../config/packages/WxLoki/wxconfig-TEST.cnf
-wx.config.env.QS=../../../config/packages/WxLoki/wxconfig-QS.cnf
+wx.config.env.QA=../../../config/packages/WxLoki/wxconfig-QA.cnf
 wx.config.env.PROD=../../../config/packages/WxLoki/wxconfig-PROD.cnf
 
 

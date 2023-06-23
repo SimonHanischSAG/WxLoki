@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<config>
+	<autoConfig>
+	    <messaging>
+	        <um>
+	            <hosts>${um.admin.hosts}</hosts>
+	            <username>${um.admin.username}</username>
+	            <password>${um.admin.password}</password>
+				<initialContextFactory>com.pcbsys.nirvana.nSpace.NirvanaContextFactory</initialContextFactory>
+
+				<jmsConnectionFactory>
+				    <name>um_local</name>
+				    <connectionFactoryType>ConnectionFactory</connectionFactoryType>
+				    <connectionURL>${um.connectionURL}</connectionURL>
+				    <autoCreateResource>false</autoCreateResource>
+				</jmsConnectionFactory>
+
+				<queue>
+					<name>${loki.buffer.destinationName.loki}</name>
+					<suppressDefaultAcls>true</suppressDefaultAcls>
+					<storageProperties>
+						<autoMaintanence>true</autoMaintanence>
+					</storageProperties>
+				</queue>
+            </um>
+	        <integrationServer>
+            	<jmsTrigger>
+    				<triggerName>wx.loki.trigger:bufferQueueTrigger</triggerName>
+    				<package>WxLoki</package>
+    				<aliasName>${loki.buffer.connectionAliasName}</aliasName>
+    				<isConcurrent>true</isConcurrent>
+    				<maxExecutionThreads>30</maxExecutionThreads>
+    				<destinations>
+    					<destination>${loki.buffer.destinationName.loki}</destination>
+    					<destinationType>Queue</destinationType>
+    				</destinations>
+    				<routingRules>
+    					<ruleName>Rule1</ruleName>
+    					<serviceName>wx.loki.impl:handleBufferredMessage</serviceName>
+    				</routingRules>
+    				<enabled>true</enabled>
+    				<maxRetryAttempts>2000000000</maxRetryAttempts>
+    				<retryInterval>30000</retryInterval>
+    				<suspendOnError>false</suspendOnError>
+    				<onTransientError>Suspend and Retry Later/Suspend and Recover</onTransientError>
+    			</jmsTrigger>
+            </integrationServer>
+        </messaging>
+    </autoConfig>
+</config>
