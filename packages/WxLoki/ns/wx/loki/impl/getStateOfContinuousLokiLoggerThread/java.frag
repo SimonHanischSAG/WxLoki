@@ -2,6 +2,19 @@
 
 <Values version="2.0">
   <value name="name">getStateOfContinuousLokiLoggerThread</value>
+  <array name="sig" type="value" depth="1">
+    <value>[o] field:0:required running</value>
+    <value>[o] field:0:required queueSize</value>
+    <value>[o] field:0:required stopContinuousLokiLoggerThread</value>
+    <value>[o] field:0:required droppedEvents</value>
+    <value>[o] field:0:required sentEvents</value>
+    <value>[o] field:0:required sentEventsToBuffer</value>
+    <value>[o] field:0:required currentSleepingTime</value>
+    <value>[o] field:0:required minSleepingTimeAfterBatchInMilliseconds</value>
+    <value>[o] field:0:required maxSleepingTimeAfterBatchInMilliseconds</value>
+    <value>[o] field:0:required tracingEnabled</value>
+  </array>
+  <value name="sigtype">java 3.5</value>
   <value name="encodeutf8">true</value>
   <value name="body">SURhdGFNYXAgcGlwZU1hcCA9IG5ldyBJRGF0YU1hcChwaXBlbGluZSk7DQpwaXBlTWFwLnB1dCgi
 cnVubmluZyIsIFN0cmluZy52YWx1ZU9mKGNvbnRpbnVvdXNMb2tpTG9nZ2VyVGhyZWFkU3RhcnRl
@@ -26,5 +39,5 @@ bnRWaWFIdHRwSW5NaWxsaXNlY29uZHMiLCBTdHJpbmcudmFsdWVPZihsYXN0RHVyYXRpb25PZlNl
 bmRFdmVudFZpYUh0dHAvMTAwMDAwMCkpOw0KcGlwZU1hcC5wdXQoImxhc3REdXJhdGlvbk9mQmF0
 Y2hSdW5Jbk1pbGxpc2Vjb25kcyIsIFN0cmluZy52YWx1ZU9mKGxhc3REdXJhdGlvbk9mQmF0Y2hS
 dW4vMTAwMDAwMCkpOw0KcGlwZU1hcC5wdXQoImxhc3RCYXRjaFNpemUiLCBTdHJpbmcudmFsdWVP
-ZihsYXN0QmF0Y2hTaXplKSk7DQoNCgkNCgkNCgkNCgkNCgk=</value>
+ZihsYXN0QmF0Y2hTaXplKSk7DQoNCgkNCgkNCgkNCgkNCgkNCg==</value>
 </Values>

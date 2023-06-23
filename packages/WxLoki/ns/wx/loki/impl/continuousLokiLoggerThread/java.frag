@@ -2,6 +2,16 @@
 
 <Values version="2.0">
   <value name="name">continuousLokiLoggerThread</value>
+  <array name="sig" type="value" depth="1">
+    <value>[i] field:0:required url</value>
+    <value>[i] field:0:required user</value>
+    <value>[i] field:0:required pass</value>
+    <value>[i] field:0:optional batchSize</value>
+    <value>[i] field:0:optional maxDeliveryAttempts</value>
+    <value>[i] field:0:optional minSleepingTimeAfterBatchInMilliseconds</value>
+    <value>[i] field:0:optional maxSleepingTimeAfterBatchInMilliseconds</value>
+  </array>
+  <value name="sigtype">java 3.5</value>
   <value name="encodeutf8">true</value>
   <value name="body">ZGVidWdMb2dJbmZvKCJjb250aW51b3VzTG9raUxvZ2dlclRocmVhZDogVGhyZWFkIHN0YXJ0ZWQi
 KTsNCklEYXRhTWFwIHBpcGVNYXAgPSBuZXcgSURhdGFNYXAocGlwZWxpbmUpOw0KDQpTdHJpbmcg
@@ -83,5 +93,5 @@ b3IoImNvbnRpbnVvdXNMb2tpTG9nZ2VyVGhyZWFkOiBldmVudFF1ZXVlIG5vdCBpbml0aWFsaXpl
 ZCIpOw0KCXN5bmNocm9uaXplZChxdWV1ZUxvY2spIHsNCgkJY29udGludW91c0xva2lMb2dnZXJU
 aHJlYWRTdGFydGVkID0gZmFsc2U7DQoJfQ0KfQ0KZGVidWdMb2dJbmZvKCJjb250aW51b3VzTG9r
 aUxvZ2dlclRocmVhZDogVGhyZWFkIHN0b3BwZWQgbm93Iik7DQoJDQoJDQoJDQoJDQoJDQoJDQoJ
-DQoJ</value>
+DQoJDQo=</value>
 </Values>
